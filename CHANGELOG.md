@@ -8,3 +8,7 @@ Initial release.
 - Add JMEParallaxView source files
 - Add CHANGELOG file 
 - Update README.md
+
+## 0.2.0
+- Add .podspec file
+- Add Rakefile
