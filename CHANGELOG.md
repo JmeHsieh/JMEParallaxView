@@ -12,3 +12,7 @@ Initial release.
 ## 0.2.0
 - Add .podspec file
 - Add Rakefile
+
+## 1.0.0
+- Add JMEParallaxViewExample project.
+- Public release
