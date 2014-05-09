@@ -16,3 +16,7 @@ Initial release.
 ## 1.0.0
 - Add JMEParallaxViewExample project.
 - Public release
+
+## 1.0.1
+- Update Demo.gif
+- Update README
