@@ -5,7 +5,7 @@
 
 An easy-configuring UIView + UIImageView to perform parallax effect.
 
-<img src="https://github.com/JmeHsieh/JMEParallaxView/blob/master/Demo.gif" alt="RESideMenu Screenshot" width="320" height="568" />
+<img src="https://github.com/JmeHsieh/JMEParallaxView/blob/master/Demo.gif" alt="JMEParallaxView Screenshot" width="320" height="568" />
 
 ## Requirements
 * Xcode 5 or higher
