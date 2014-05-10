@@ -14,9 +14,14 @@ Initial release.
 - Add Rakefile
 
 ## 1.0.0
-- Add JMEParallaxViewExample project.
+- Add JMEParallaxViewExample project
 - Public release
 
 ## 1.0.1
 - Update Demo.gif
 - Update README
+
+## 1.0.2
+- Replace gif with png file
+- Add youtube link to demo video
+- Fix incorrect grammer in README.md
