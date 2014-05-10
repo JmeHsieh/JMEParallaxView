@@ -30,3 +30,6 @@ Initial release.
 - Add Demo.gif back.
 - Show both png and gif files in README.md
 - Change podspec version back to 1.0.0
+
+## 1.0.4
+- Add screenshots to podspec
