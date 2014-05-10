@@ -25,3 +25,8 @@ Initial release.
 - Replace gif with png file
 - Add youtube link to demo video
 - Fix incorrect grammer in README.md
+
+## 1.0.3
+- Add Demo.gif back.
+- Show both png and gif files in README.md
+- Change podspec version back to 1.0.0
