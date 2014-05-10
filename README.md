@@ -5,7 +5,9 @@
 
 An easy-configuring UIView + UIImageView to perform parallax effect.
 
-<img src="https://github.com/JmeHsieh/JMEParallaxView/blob/master/Demo.gif" alt="JMEParallaxView Screenshot" width="320" height="568" />
+<img src="https://github.com/JmeHsieh/JMEParallaxView/blob/master/Demo.png" alt="JMEParallaxView Screenshot" width="320" height="568" />
+
+[Youtube Video](http://www.youtube.com/watch?v=UzX166Lsw_M)
 
 ## Requirements
 * Xcode 5 or higher
@@ -37,7 +39,7 @@ it simply add the following line to your Podfile:
 pod "JMEParallaxView"
 ```
     
-Alternatively, you can manually copy the files under `JMEParallaxView` directory into your project. Just be sure to have [KVOController](https://github.com/facebook/KVOController) in your project, since we use it to track the your scroll view.
+Alternatively, you can manually copy the files under `JMEParallaxView` directory into your project. Just be sure to have [KVOController](https://github.com/facebook/KVOController) in your project, since we use it to track your scroll view.
 
 ## Contact
 
