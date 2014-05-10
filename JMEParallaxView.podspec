@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             		= "JMEParallaxView"
-  s.version          		= "1.0.1"
+  s.version          		= "1.0.2"
   s.author           		= { "Jo-Yuan Hsieh" => "jmehsieh@gmail.com" }
   s.homepage         		= "https://github.com/JmeHsieh/JMEParallaxView"
   s.social_media_url 		= 'https://twitter.com/jmehsieh'
