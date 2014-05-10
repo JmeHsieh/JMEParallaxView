@@ -5,7 +5,8 @@
 
 An easy-configuring UIView + UIImageView to perform parallax effect.
 
-<img src="https://github.com/JmeHsieh/JMEParallaxView/blob/master/Demo.png" alt="JMEParallaxView Screenshot" width="320" height="568" />
+<img src="./Demo.png" alt="JMEParallaxView Screenshot" width="320" height="568" />
+<img src="./Demo.gif" alt="JMEParallaxView Screenshot" width="320" height="568" />
 
 [Youtube Video](http://www.youtube.com/watch?v=UzX166Lsw_M)
 
