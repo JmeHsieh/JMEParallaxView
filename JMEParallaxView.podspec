@@ -4,6 +4,7 @@ Pod::Spec.new do |s|
   s.author           		= { "Jo-Yuan Hsieh" => "jmehsieh@gmail.com" }
   s.homepage         		= "https://github.com/JmeHsieh/JMEParallaxView"
   s.social_media_url 		= 'https://twitter.com/jmehsieh'
+  s.screenshots			= [ "https://raw.githubusercontent.com/JmeHsieh/JMEParallaxView/master/Demo.png", "https://raw.githubusercontent.com/JmeHsieh/JMEParallaxView/master/Demo.gif" ]
   s.summary          		= "An easy-configuring UIView + UIImageView to perform parallax effect."
   s.source           		= { :git => "https://github.com/JmeHsieh/JMEParallaxView.git", :tag => s.version.to_s }
   s.license			= 'MIT'
