@@ -33,3 +33,7 @@ Initial release.
 
 ## 1.0.4
 - Add screenshots to podspec
+
+## 1.0.5
+- BUGFIX - Incorrect position of contentImageView for cases under lower bound and over upper bound
+- BUGFIX - Incorrect anchorOffset in example project
