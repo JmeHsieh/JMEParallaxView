@@ -73,7 +73,7 @@ static const CGFloat kRowHeight = 2*kPadding + kImageHeight;
         parallaxView.direction = JMEParallaxVertical;
         parallaxView.reversedContentRevealing = YES;
         parallaxView.contentDisplayingPercentage = 0.6;
-        parallaxView.anchorOffset = 64.0;   // set this to 0 if you run in iOS6 simulator.
+        parallaxView.anchorOffset = tableView.contentInset.top;
         parallaxView.observingScrollView = tableView;
         
         [cell.contentView addSubview:parallaxView];
