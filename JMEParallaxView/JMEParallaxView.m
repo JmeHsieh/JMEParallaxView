@@ -207,12 +207,12 @@ static void * scrollViewObservingContext = &scrollViewObservingContext;
     // reversed content revealing
     if (self.reversedContentRevealing) {
         if (anchor <= lowerBound) {
-            (self.direction==JMEParallaxHorizontal) ? (frame.origin.x = 0) : (frame.origin.y = 0);
-        }
-        else if (anchor >= upperBound) {
             (self.direction==JMEParallaxHorizontal) ?
             (frame.origin.x = CGRectGetWidth(self.frame)-self.contentLength) :
             (frame.origin.y = CGRectGetHeight(self.frame)-self.contentLength);
+        }
+        else if (anchor >= upperBound) {
+            (self.direction==JMEParallaxHorizontal) ? (frame.origin.x = 0) : (frame.origin.y = 0);
         }
         else if ((anchor>lowerBound) && (anchor<upperBound)) {
             CGFloat offset = (anchor-upperBound) * self.velocity;
@@ -221,12 +221,12 @@ static void * scrollViewObservingContext = &scrollViewObservingContext;
     }
     else {
         if (anchor <= lowerBound) {
+            (self.direction==JMEParallaxHorizontal) ? (frame.origin.x = 0) : (frame.origin.y = 0);
+        }
+        else if (anchor >= upperBound) {
             (self.direction==JMEParallaxHorizontal) ?
             (frame.origin.x = CGRectGetWidth(self.frame)-self.contentLength) :
             (frame.origin.y = CGRectGetHeight(self.frame)-self.contentLength);
-        }
-        else if (anchor >= upperBound) {
-            (self.direction==JMEParallaxHorizontal) ? (frame.origin.x = 0) : (frame.origin.y = 0);
         }
         else if ((anchor>lowerBound) && (anchor<upperBound)) {
             CGFloat offset = (lowerBound-anchor) * self.velocity;
