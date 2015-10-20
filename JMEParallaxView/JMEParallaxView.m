@@ -43,25 +43,38 @@ static void * scrollViewObservingContext = &scrollViewObservingContext;
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        
-        // self
-        self.backgroundColor = [UIColor clearColor];
-        self.clipsToBounds = YES;
-        
-        // content image view
-        self.contentImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        self.contentImageView.contentMode = UIViewContentModeScaleAspectFill;
-        self.contentImageView.backgroundColor = [UIColor clearColor];
-        self.contentImageView.clipsToBounds = YES;
-        [self addSubview:self.contentImageView];
-        
-        // defaults
-        self.contentDisplayingPercentage = 0.8; // this should be set before direction
-        self.direction = JMEParallaxHorizontal;
-        self.reversedContentRevealing = YES;
-        self.activeRange = CGPointZero;
+        [self setup];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup
+{
+    // self
+    self.backgroundColor = [UIColor clearColor];
+    self.clipsToBounds = YES;
+    
+    // content image view
+    self.contentImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    self.contentImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.contentImageView.backgroundColor = [UIColor clearColor];
+    self.contentImageView.clipsToBounds = YES;
+    self.contentImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self addSubview:self.contentImageView];
+    
+    // defaults
+    self.contentDisplayingPercentage = 0.8; // this should be set before direction
+    self.direction = JMEParallaxHorizontal;
+    self.reversedContentRevealing = YES;
+    self.activeRange = CGPointZero;
 }
 
 #pragma mark - View Lifecycyle
@@ -171,23 +184,54 @@ static void * scrollViewObservingContext = &scrollViewObservingContext;
 {
     CGFloat min;
     CGFloat max;
+    CGRect rect = [tableView rectForRowAtIndexPath:indexPath];
     
     if (direction == JMEParallaxHorizontal) {
-        min = CGRectGetMinX([tableView rectForRowAtIndexPath:indexPath]) - CGRectGetWidth(tableView.frame);
-        max = CGRectGetMaxX([tableView rectForRowAtIndexPath:indexPath]);
+        min = CGRectGetMinX(rect) - CGRectGetWidth(tableView.frame);
+        max = CGRectGetMaxX(rect);
         
         min += edgeInsets.left;
         max -= edgeInsets.right;
     }
     else {
-        min = CGRectGetMinY([tableView rectForRowAtIndexPath:indexPath]) - CGRectGetHeight(tableView.frame);
-        max = CGRectGetMaxY([tableView rectForRowAtIndexPath:indexPath]);
+        min = CGRectGetMinY(rect) - CGRectGetHeight(tableView.frame);
+        max = CGRectGetMaxY(rect);
         
         min += edgeInsets.top;
         max -= edgeInsets.bottom;
     }
     
     return CGPointMake(min, max);
+}
+
++ (CGPoint)activeRangeWithCollectionView:(UICollectionView *)collectionView
+                               indexPath:(NSIndexPath *)indexPath
+                               direction:(JMEParallaxDirection)direction
+                              edgeInsets:(UIEdgeInsets)edgeInsets
+{
+    CGFloat min;
+    CGFloat max;
+    
+    UICollectionViewLayoutAttributes *attributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
+    CGRect rect = attributes.frame;
+    
+    if (direction == JMEParallaxHorizontal) {
+        min = CGRectGetMinX(rect) - CGRectGetWidth(collectionView.frame);
+        max = CGRectGetMaxX(rect);
+        
+        min += edgeInsets.left;
+        max -= edgeInsets.right;
+    }
+    else {
+        min = CGRectGetMinY(rect) - CGRectGetHeight(collectionView.frame);
+        max = CGRectGetMaxY(rect);
+        
+        min += edgeInsets.top;
+        max -= edgeInsets.bottom;
+    }
+    
+    return CGPointMake(min, max);
+    
 }
 
 #pragma mark - Instance Methods
@@ -255,7 +299,7 @@ static void * scrollViewObservingContext = &scrollViewObservingContext;
     
     // changes made by activeRange
     CGFloat slidingRangeLength;
-    CGFloat activeRangeLength = abs(self.activeRange.x - self.activeRange.y);
+    CGFloat activeRangeLength = fabs(self.activeRange.x - self.activeRange.y);
     if (self.direction == JMEParallaxHorizontal) {
         slidingRangeLength = self.contentLength - CGRectGetWidth(self.frame);
     }

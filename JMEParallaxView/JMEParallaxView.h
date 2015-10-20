@@ -93,6 +93,19 @@ typedef NS_ENUM(NSUInteger, JMEParallaxDirection)
                          edgeInsets:(UIEdgeInsets)edgeInsets;
 
 /**
+ @abstract Convenient method for calculating active range.
+ @param collectionView The collectionView we are responding to.
+ @param indexPath The indexPath of the cell.
+ @param direction The JMEParallaxDirection of JMEParallaxView instance that's going to be used.
+ @param edgeInsets The margin of JMEParallaxView that's going to be used.
+ @discussion The convenient method for calculating active range of a JMEParallaxView, in UITableView case.
+ */
++ (CGPoint)activeRangeWithCollectionView:(UICollectionView *)collectionView
+                               indexPath:(NSIndexPath *)indexPath
+                               direction:(JMEParallaxDirection)direction
+                              edgeInsets:(UIEdgeInsets)edgeInsets;
+
+/**
  @abstract Update contentImageView's frame.
  @param scrollView The scrollView we are responding to.
  @discussion Manually call this in scrollViewDidScroll: if observedScrollView is not set.
